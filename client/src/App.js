@@ -1,17 +1,18 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import DatabaseSelection from './pages/DataBaseSelection';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
 
-const App = () => {
+function App() {
   return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<LoginPage />} />
+          {/* Add other routes as needed */}
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
 
-    <Routes>
-      <Route path="/" exact element={<LoginPage />} />
-      <Route path="/database-selection" element={<DatabaseSelection/>} />
-    </Routes>
-  
-  );
-};
-
-export default App;
+export default App
